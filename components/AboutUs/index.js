@@ -16,7 +16,6 @@ export default function Aboutus() {
       }, []);
   return (
     <>
-      <div className="page-wrapper">
         <section className="page-title parallaxie" data-bg-img="assets/images/bg/06.jpeg">
           <div className="container">
             <div className="row">
@@ -35,10 +34,7 @@ export default function Aboutus() {
             </div>
           </div>
         </section>
-        {/* <!--page title end--> */}
 
-
-        {/* <!--body content start--> */}
         <div className="page-content">
 
           {/* <!--about start--> */}
@@ -199,28 +195,7 @@ export default function Aboutus() {
           {/* <!--faq need help end--> */}
 
 
-          {/* <!--call us start--> */}
-          {/* <section className="theme-bg py-5">
-            <div className="container">
-              <div className="row align-items-center">
-                <div className="col-md-6 col-12">
-                  <h3 className="text-light">Need a Help for Check-up? Call for an Emergency Laboratory Services</h3>
-                </div>
-                <div className="col-md-5 col-12 ms-auto mt-3 mt-lg-0">
-                  <div className="d-flex align-items-start justify-content-end">
-                    <div className="text-white text-end"> <span>Help Desk 24/7</span>
-                      <h3 className="font-w-4"><Link className="text-decoration-underline text-white" href="tel:+(91)9854499900">+91 9854499900</Link></h3>
-                    </div> <span className="white-bg d-inline-block p-2 ms-4"><i className="las la-phone ic-3x text-theme"></i></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> */}
-          {/* <!--call us end--> */}
 
-
-
-          {/* <!--testimonial start--> */}
 
           <section className="pb-0">
             <div className="container-fluid p-0">
@@ -265,7 +240,6 @@ export default function Aboutus() {
             </div>
           </section>
         </div>
-      </div>
 
     </>
   )
