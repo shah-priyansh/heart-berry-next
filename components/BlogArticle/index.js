@@ -15,9 +15,9 @@ export default function Blogarticle({ blog_article }) {
                                     </div>
                                     <div className="col-sm-7">
                                         <h5 className="h6">
-                                            <Link href="blog-single.html">{props.title}</Link>
+                                            <Link href="">{props.title}</Link>
                                         </h5>
-                                        <Link className="d-inline-block text-grey" href="#">{props.date}</Link>
+                                        <Link className="d-inline-block text-grey" href="">{props.date}</Link>
                                     </div>
                                 </div>
                             </article>

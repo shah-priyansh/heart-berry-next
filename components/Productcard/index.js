@@ -21,7 +21,7 @@ export default function Productcard({ product_data }) {
                                             <div>
                                                 <Link href={props.cart_link}>
                                                     <button className="btn-cart mb-3" type="button">
-                                                        <i className="las la-shopping-cart"></i>
+                                                    <i className="las la-eye"></i>
                                                     </button>
                                                 </Link>
                                             </div>

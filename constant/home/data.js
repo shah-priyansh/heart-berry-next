@@ -1,27 +1,3 @@
-export const latest_blog = [
-    {
-        key: 1,
-        link:'/newsdetails',
-        img: 'assets/images/blog/Blog-01.jpg',
-        date: '20 April',
-        title: 'Back to school, in masks? Where guidance is headed for fall 2021',
-    },
-    {
-        key: 2,
-        link:'/newsdetails',
-        img: 'assets/images/blog/Blog-02.jpg',
-        date: '15 August',
-        title: 'Delta variant likely to become dominant in US: COVID-19 updates',
-    },
-    {
-        key: 3,
-        link:'/newsdetails',
-        img: 'assets/images/blog/Blog-03.jpg',
-        date: '13 September',
-        title: 'When will everyone be vaccinated for COVID-19?',
-    },
-]
-
 export const clients_review = [
     {
         clients_img:'assets/images/clients/Clients-01.jpg',
@@ -60,3 +36,4 @@ export const clients_review = [
         content:'Great service - I called to check on the order and they were helpful and prompt. The order took about 2 weeks to get (no fault of theirs-they shipped promptly).',
     },
 ]
+

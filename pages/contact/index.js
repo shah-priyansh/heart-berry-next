@@ -1,16 +1,13 @@
 import dynamic from "next/dynamic";
 import React from "react";
-
-const DynamicHome = dynamic(() => import("../../components/Home"), {
+const DynamicAbout = dynamic(() => import("../../components/Contact"), {
   ssr: false, // Ensure this component isn't SSR'd
 });
 
-const Page = () => {
+export default function index() {
   return (
     <>
-      <DynamicHome />
+      <DynamicAbout />
     </>
   );
-};
-
-export default Page;
+}

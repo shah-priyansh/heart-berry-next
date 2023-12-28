@@ -15,16 +15,17 @@ export default function Blog({ blog_data }) {
                                     </div>
                                     <h2 className="h4 my-3">{props.title}</h2>
                                     <ul className="list-inline mb-0 border-top border-bottom border-light py-2 mb-4">
-                                        <li className="list-inline-item"> <Link  href="#" className="text-black"><i className="lar la-user-circle me-1"></i> Admin</Link>
+                                        <li className="list-inline-item"> <Link   href="" className="text-black"><i className="lar la-user-circle me-1"></i> Admin</Link>
                                         </li>
-                                        <li className="list-inline-item"> <Link  href="#" className="text-black"><i className="las la-eye me-1"></i> 275</Link>
+                                        <li className="list-inline-item"> <Link   href="" className="text-black"><i className="las la-eye me-1"></i> 275</Link>
                                         </li>
-                                        <li className="list-inline-item"> <Link  href="#" className="text-black"><i className="lar la-comments me-1"></i> 300</Link>
+                                        <li className="list-inline-item"> <Link   href="" className="text-black"><i className="lar la-comments me-1"></i> 300</Link>
                                         </li>
                                     </ul>
                                     <div className="d-flex justify-content-between align-items-center">
-                                        <div><Link className="px-3 py-2 light-bg text-black"  href="#">Equipment</Link>  <Link className="px-3 py-2 light-bg text-black"  href="#">Sass</Link>
-                                        </div> <Link className="link-btn"  href={props.link}><i className="las la-long-arrow-alt-right"></i></Link>
+                                        <div><Link className="px-3 py-2 light-bg text-black"   href="">Equipment</Link>  
+                                        <Link className="px-3 py-2 light-bg text-black"  href="">Sass</Link>
+                                        </div> <Link className="link-btn"  href=""><i className="las la-long-arrow-alt-right"></i></Link>
                                     </div>
                                 </div>
                             </div>
