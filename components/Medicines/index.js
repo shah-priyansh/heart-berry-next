@@ -342,52 +342,52 @@ export default function Products() {
                     <h4 className="widget-title mb-3">Categories</h4>
                     <ul className="list-unstyled list-group list-group-flush flex flex-column gap-2">
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="5" className="list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="5" className="list-group-item border-0 p-0 text-black cursor-pointer">
                           Cancer Medicines
                           <span className="ms-1">(12)</span>
-                        </Link>
+                        </div>
                       </li>
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="6" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="6" className=" list-group-item border-0 p-0 text-black cursor-pointer">
                           Hepatitis - A
                           <span className="ms-1">(15)</span>
-                        </Link>
+                        </div>
                       </li>
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="7" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="7" className=" list-group-item border-0 p-0 text-black cursor-pointer">
                           Hepatitis - B
                           <span className="ms-1">(9)</span>
-                        </Link>
+                        </div>
                       </li>
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="8" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="8" className=" list-group-item border-0 p-0 text-black cursor-pointer">
                           Hepatitis - C
                           <span className="ms-1">(5)</span>
-                        </Link>
+                        </div>
                       </li>
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="9" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="9" className=" list-group-item border-0 p-0 text-black cursor-pointer">
                           Hepatitis Medicines
                           <span className="ms-1">(5)</span>
-                        </Link>
+                        </div>
                       </li>
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="10" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="10" className=" list-group-item border-0 p-0 text-black cursor-pointer">
                           Hiv
                           <span className="ms-1">(5)</span>
-                        </Link>
+                        </div>
                       </li>
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="11" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="11" className=" list-group-item border-0 p-0 text-black cursor-pointer">
                           Rheumatology
                           <span className="ms-1">(5)</span>
-                        </Link>
+                        </div>
                       </li>
                       <li>
-                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="12" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
+                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="12" className=" list-group-item border-0 p-0 text-black cursor-pointer">
                           Uncategorized
                           <span className="ms-1">(5)</span>
-                        </Link>
+                        </div>
                       </li>
                     </ul>
                   </div>

@@ -259,12 +259,12 @@ export default function News() {
                                         <div className="p-4 border">
                                             <h4 className="mb-3">Categories</h4>
                                             <ul className="list-unstyled list-group list-group-flush flex flex-column gap-1">
-                                                <li><Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="1" className="list-group-item text-black border-0 py-0" href="">Blog</Link></li>
-                                                <li><Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="2" className="list-group-item text-black border-0 py-0" href="">Computer</Link></li>
-                                                <li><Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="3" className="list-group-item text-black border-0 py-0" href="">Coronavirus</Link></li>
-                                                <li><Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="4" className="list-group-item text-black border-0 py-0" href="">Post Format</Link></li>
-                                                <li><Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="5" className="list-group-item text-black border-0 py-0" href="">Provide Assistance</Link></li>
-                                                <li><Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="6" className="list-group-item text-black border-0 py-0" href="">Uncategorized</Link></li>
+                                                <li><div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="1" className="list-group-item text-black border-0 py-0 cursor-pointer" >Blog</div></li>
+                                                <li><div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="2" className="list-group-item text-black border-0 py-0 cursor-pointer" >Computer</div></li>
+                                                <li><div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="3" className="list-group-item text-black border-0 py-0 cursor-pointer" >Coronavirus</div></li>
+                                                <li><div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="4" className="list-group-item text-black border-0 py-0 cursor-pointer" >Post Format</div></li>
+                                                <li><div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="5" className="list-group-item text-black border-0 py-0 cursor-pointer" >Provide Assistance</div></li>
+                                                <li><div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="6" className="list-group-item text-black border-0 py-0 cursor-pointer" >Uncategorized</div></li>
                                             </ul>
                                         </div>
                                     </div>

@@ -133,7 +133,7 @@ ul {
     Helper class
 ------------------------*/
 .cursor-pointer {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 p {
