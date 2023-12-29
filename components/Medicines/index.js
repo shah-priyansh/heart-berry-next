@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
-
 import Productcard from '../Productcard';
-import { Sortby, Popularity, Average_Rating, Latest, Cancer_Medicines, Hepatitis_A, Hepatitis_B, Hepatitis_C, Hepatitis_Medicines, Hiv, Rheumatology, Uncategorized } from '../../constant/shop/data'
+import { Sortby } from '../../constant/shop/data'
 
 
 export default function Products() {
@@ -11,43 +10,94 @@ export default function Products() {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
 
+  // Function to filter products based on type
+  const getTypeFilteredProducts = (type) => {
+    return Sortby.filter((product) => product.type === type);
+  };
+
   const totalProducts = (() => {
     switch (selectedValue) {
       case '1':
         return Sortby.length;
       case '2':
-        return Popularity.length;
+        return getTypeFilteredProducts('popolarity').length;
       case '3':
-        return Average_Rating.length;
+        return getTypeFilteredProducts('averageratting').length;
       case '4':
-        return Latest.length;
+        return getTypeFilteredProducts('latest').length;
       case '5':
-        return Cancer_Medicines.length;
+        return getTypeFilteredProducts('cancermedicines').length;
       case '6':
-        return Hepatitis_A.length;
+        return getTypeFilteredProducts('hepatitisA').length;
       case '7':
-        return Hepatitis_B.length;
+        return getTypeFilteredProducts('hepatitisB').length;
       case '8':
-        return Hepatitis_C.length;
+        return getTypeFilteredProducts('hepatitisC').length;
       case '9':
-        return Hepatitis_Medicines.length;
+        return getTypeFilteredProducts('hepatitismedicines').length;
       case '10':
-        return Hiv.length;
+        return getTypeFilteredProducts('hiv').length;
       case '11':
-        return Rheumatology.length;
+        return getTypeFilteredProducts('rheumatology').length;
       case '12':
-        return Uncategorized.length;
+        return getTypeFilteredProducts('uncategorized').length;
+      // Add cases for other types
+      default:
+        return Sortby.length;
     }
   })();
 
   const totalPages = Math.ceil(totalProducts / productsPerPage);
 
+  // Handle page change
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
     }
   };
 
+  // pegination
+  const generatePageNumbers = () => {
+    const pageNumbers = [];
+    const maxPageNumbers = 4;
+
+    if (totalPages <= maxPageNumbers) {
+      // If total pages are less than or equal to 4, show all page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      // If total pages are more than 4
+      if (currentPage <= maxPageNumbers - 2) {
+        // If current page is close to the beginning
+        for (let i = 1; i <= maxPageNumbers - 1; i++) {
+          pageNumbers.push(i);
+        }
+        pageNumbers.push('...');
+        pageNumbers.push(totalPages);
+      } else if (currentPage >= totalPages - maxPageNumbers + 3) {
+        // If current page is close to the end
+        pageNumbers.push(1);
+        pageNumbers.push('...');
+        for (let i = totalPages - maxPageNumbers + 3; i <= totalPages; i++) {
+          pageNumbers.push(i);
+        }
+      } else {
+        // Show pages around the current page
+        pageNumbers.push(1);
+        pageNumbers.push('...');
+        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+          pageNumbers.push(i);
+        }
+        pageNumbers.push('...');
+        pageNumbers.push(totalPages);
+      }
+    }
+
+    return pageNumbers;
+  };
+
+  // Handle select change for sorting
   const handleSelectChange = (event) => {
     const newSelectedValue = event.target.value;
 
@@ -57,6 +107,7 @@ export default function Products() {
     }
   };
 
+  // Calculate index of first and last product for current page
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
@@ -66,30 +117,29 @@ export default function Products() {
       case '1':
         return Sortby.slice(indexOfFirstProduct, indexOfLastProduct);
       case '2':
-        return Popularity.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('popolarity').slice(indexOfFirstProduct, indexOfLastProduct);
       case '3':
-        return Average_Rating.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('averageratting').slice(indexOfFirstProduct, indexOfLastProduct);
       case '4':
-        return Latest.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('latest').slice(indexOfFirstProduct, indexOfLastProduct);
       case '5':
-        return Cancer_Medicines.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('cancermedicines').slice(indexOfFirstProduct, indexOfLastProduct);
       case '6':
-        return Hepatitis_A.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('hepatitisA').slice(indexOfFirstProduct, indexOfLastProduct);
       case '7':
-        return Hepatitis_B.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('hepatitisB').slice(indexOfFirstProduct, indexOfLastProduct);
       case '8':
-        return Hepatitis_C.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('hepatitisC').slice(indexOfFirstProduct, indexOfLastProduct);
       case '9':
-        return Hepatitis_Medicines.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('hepatitismedicines').slice(indexOfFirstProduct, indexOfLastProduct);
       case '10':
-        return Hiv.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('hiv').slice(indexOfFirstProduct, indexOfLastProduct);
       case '11':
-        return Rheumatology.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('rheumatology').slice(indexOfFirstProduct, indexOfLastProduct);
       case '12':
-        return Uncategorized.slice(indexOfFirstProduct, indexOfLastProduct);
-      // ... (repeat for other cases)
-      // default:
-      //   return Sortby.slice(indexOfFirstProduct, indexOfLastProduct);
+        return getTypeFilteredProducts('uncategorized').slice(indexOfFirstProduct, indexOfLastProduct);
+      default:
+        return Sortby.slice(indexOfFirstProduct, indexOfLastProduct);
     }
   })();
 
@@ -102,10 +152,14 @@ export default function Products() {
             Previous
           </Link>
         </li>
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <li key={index} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
-            <Link className="page-link" href="" onClick={() => handlePageChange(index + 1)}>
-              {index + 1}
+        {generatePageNumbers().map((pageNumber, index) => (
+          <li key={index} className={`page-item ${pageNumber === '...' ? 'disabled' : ''}`}>
+            <Link
+              className={`page-link ${currentPage === pageNumber ? 'active' : ''}`}
+              href=""
+              onClick={() => handlePageChange(pageNumber)}
+            >
+              {pageNumber}
             </Link>
           </li>
         ))}
@@ -120,20 +174,26 @@ export default function Products() {
 
 
   useEffect(() => {
+    // Coman JQuery File
     const script = document.createElement("script");
     script.src = "assets/js/theme-script.js";
     script.async = true;
     document.body.appendChild(script);
+    
+
+    // For Pagination
+    setCurrentPage(1);
+
     return () => {
+      // ComanJQuery File
       document.body.removeChild(script);
     };
-  }, []);
+  }, [selectedValue]);
 
 
   return (
     <>
       <div className="page-wrapper">
-
         <section className="page-title parallaxie" data-bg-img="assets/images/bg/06.jpeg">
           <div className="container">
             <div className="row">
@@ -144,9 +204,7 @@ export default function Products() {
                     <ol className="breadcrumb">
                       <li className="breadcrumb-item"><Link href="/"><i className="las la-home me-1"></i>Home</Link>
                       </li>
-                      <li className="breadcrumb-item">Shop
-                      </li>
-                      <li className="breadcrumb-item active" aria-current="page">Our Products</li>
+                      <li className="breadcrumb-item active" aria-current="page">Shop</li>
                     </ol>
                   </nav>
                 </div>
@@ -166,8 +224,8 @@ export default function Products() {
                     </div>
                     <div className="col-md-7 d-flex align-items-center justify-content-md-end">
                       <div className="view-filter">
-                        <Link className="active" href="/shop"><i className="lab la-buromobelexperte"></i></Link>
-                        <Link href="/shoplist"><i className="las la-list"></i></Link>
+                        <Link className="active" href="/medicines"><i className="lab la-buromobelexperte"></i></Link>
+                        <Link href="/medicineslist"><i className="las la-list"></i></Link>
                       </div>
                       <div className="sort-filter ms-2 d-flex align-items-center">
                         <select className="form-select" onChange={handleSelectChange} value={selectedValue}>
@@ -277,23 +335,6 @@ export default function Products() {
                       </>
                     )}
                   </div>
-
-
-                  {/* <nav aria-label="Page navigation" className="mt-6">
-                    <ul className="pagination">
-                      <li className="page-item"><Link className="page-link" href="">Previous</Link>
-                      </li>
-                      {Array.from({ length: Math.ceil(Sortby.length / productsPerPage) }).map((_, index) => (
-                        <li key={index} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
-                          <Link className="page-link" href="" onClick={() => paginate(index + 1)}>
-                            {index + 1}
-                          </Link>
-                        </li>
-                      ))}
-                      <li className="page-item"><Link className="page-link" href="">Next</Link>
-                      </li>
-                    </ul>
-                  </nav> */}
                   {renderPagination}
                 </div>
                 <div className="col-xl-3 col-lg-12 sidebar mt-6 mt-xl-0">
@@ -301,52 +342,52 @@ export default function Products() {
                     <h4 className="widget-title mb-3">Categories</h4>
                     <ul className="list-unstyled list-group list-group-flush flex flex-column gap-2">
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="5" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="5" className="list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Cancer Medicines
                           <span className="ms-1">(12)</span>
-                        </div>
+                        </Link>
                       </li>
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="6" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="6" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Hepatitis - A
                           <span className="ms-1">(15)</span>
-                        </div>
+                        </Link>
                       </li>
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="7" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="7" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Hepatitis - B
                           <span className="ms-1">(9)</span>
-                        </div>
+                        </Link>
                       </li>
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="8" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="8" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Hepatitis - C
                           <span className="ms-1">(5)</span>
-                        </div>
+                        </Link>
                       </li>
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="9" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="9" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Hepatitis Medicines
                           <span className="ms-1">(5)</span>
-                        </div>
+                        </Link>
                       </li>
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="10" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="10" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Hiv
                           <span className="ms-1">(5)</span>
-                        </div>
+                        </Link>
                       </li>
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="11" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="11" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Rheumatology
                           <span className="ms-1">(5)</span>
-                        </div>
+                        </Link>
                       </li>
                       <li>
-                        <div onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="12" className="text-black cursor-pointer" href="">
+                        <Link onClick={(event) => setSelectedValue(event.target.getAttribute("data-value"))} data-value="12" className=" list-group-item border-0 p-0 text-black cursor-pointer" href="">
                           Uncategorized
                           <span className="ms-1">(5)</span>
-                        </div>
+                        </Link>
                       </li>
                     </ul>
                   </div>

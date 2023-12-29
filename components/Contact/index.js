@@ -28,8 +28,6 @@ export default function Contact() {
                                         <ol className="breadcrumb">
                                             <li className="breadcrumb-item"><Link href="/"><i className="las la-home me-1"></i>Home</Link>
                                             </li>
-                                            <li className="breadcrumb-item">Pages
-                                            </li>
                                             <li className="breadcrumb-item active" aria-current="page">Contact Us</li>
                                         </ol>
                                     </nav>

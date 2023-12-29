@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Blog from "../Blog";
 import { clients_review } from "@/constant/home/data";
-import { latest_blog } from "@/constant/news/data";
+import { Newses } from "@/constant/news/data";
 
 export default function Home() {
   useEffect(() => {
@@ -15,9 +15,11 @@ export default function Home() {
       document.body.removeChild(script);
     };
   }, []);
+
+  const limitedBlogs = Newses.slice(0, 3);
   return (
     <>
-      
+
       <div className="page-wrapper">
 
 
@@ -633,7 +635,7 @@ export default function Home() {
               </div>
               <div className="gap-4  blogs-content">
                 {/* <!-- Blog Card --> */}
-                <Blog blog_data={latest_blog} />
+                <Blog blog_data={limitedBlogs} />
                 {/* <!-- End Blog Card --> */}
               </div>
             </div>
@@ -695,7 +697,7 @@ export default function Home() {
 
 
       </div>
-      
+
     </>
   );
 }

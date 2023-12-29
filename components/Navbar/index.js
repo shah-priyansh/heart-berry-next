@@ -105,7 +105,7 @@ export default function Navbar() {
                                                     </li>
                                                 </ul>
                                             </li> */}
-                                            <li className="nav-item"><Link className="nav-link " href="/shop" >Medicines</Link></li>
+                                            <li className="nav-item"><Link className="nav-link " href="/medicines" >Medicines</Link></li>
                                             <li className="nav-item"><Link className="nav-link " href="/globalpresence" >Global Precence</Link></li>
                                             {/* <li className="nav-item dropdown"><Link className="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown">Services</Link>
                                                 <ul className="dropdown-menu">
@@ -122,7 +122,7 @@ export default function Navbar() {
                                                 </ul>
                                             </li> */}
                                             <li className="nav-item"><Link className="nav-link " href="/news" >News</Link></li>
-                                            <li className="nav-item"><Link className="nav-link " href="/contact" >Contact Us</Link></li>
+                                            <li className="nav-item"><Link className="nav-link " href="/contact" >Contact</Link></li>
                                         </ul>
                                     </div>
                                     <div className="right-nav align-items-center d-flex gap-3 align-items-center justify-content-end">
