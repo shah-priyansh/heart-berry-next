@@ -2,7 +2,7 @@
 
 import Layout from "@/components/layout";
 import Script from "next/script";
-import React, { useEffect } from "react";
+import React from "react";
 
 function MyApp({ Component, pageProps }) {
 
