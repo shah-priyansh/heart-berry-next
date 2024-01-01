@@ -12,20 +12,20 @@ export default function Productcard({ product_data }) {
                                 <div className="card product-card rounded-0">
                                     <div className="product-img position-relative overflow-hidden">
                                         <img className="img-fluid product_img" src={props.image} alt="..." />
-                                        <div className="product-link position-absolute">
-                                            <div>
+                                        <div className="product-link d-flex align-items-center gap-4 position-absolute top-50 start-50 translate-middle p-0">
+                                            <div className='d-flex align-items-center justify-content-center'>
                                                 <Link href={props.card_link}>
-                                                    <button className="btn-compare mb-3" type="button"><i className="las la-random"></i></button>
+                                                    <button className="btn-compare " type="button"><i className="las la-random"></i></button>
                                                 </Link>
                                             </div>
-                                            <div>
+                                            {/* <div>
                                                 <Link href={props.cart_link}>
                                                     <button className="btn-cart mb-3" type="button">
-                                                        <i className="las la-shopping-cart"></i>
+                                                    <i className="las la-eye"></i>
                                                     </button>
                                                 </Link>
-                                            </div>
-                                            <div>
+                                            </div> */}
+                                            <div className='d-flex justify-content-center'>
                                                 <Link href={props.wishlist_link}>
                                                     <button className="btn-wishlist" type="button"><i className="lar la-heart"></i></button>
                                                 </Link>

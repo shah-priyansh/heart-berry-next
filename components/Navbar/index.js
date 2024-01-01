@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import Link from 'next/link'
+import Link  from 'next/link'
 
 export default function Navbar() {
     const [isBoxOpen, setIsBoxOpen] = useState(false);
@@ -35,23 +34,23 @@ export default function Navbar() {
                                             <div>Surat, Gujarat</div>
                                         </div>
                                     </div>
-                                    <div className="d-none d-lg-flex align-items-center">
+                                    {/* <div className="d-none d-lg-flex align-items-center">
                                         <div> <i className="las la-business-time"></i>
                                         </div>
                                         <div>
                                             <div>Mon-Sat: 9.30am To 7.00pm</div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="d-flex align-items-center">
                                     {/* <Link className="btn btn-white btn-sm py-3" href="/login"><span>Login</span></Link> */}
                                     <div className="social-icons d-none d-lg-inline-block ms-3">
                                         <ul className="list-inline">
-                                            <li><Link href="#"><i className="lab la-facebook-f"></i></Link>
+                                            <li><Link href=""><i className="lab la-facebook-f"></i></Link>
                                             </li>
-                                            <li><Link href="#"><i className="lab la-twitter"></i></Link>
+                                            <li><Link href=""><i className="lab la-twitter"></i></Link>
                                             </li>
-                                            <li><Link href="#"><i className="lab la-linkedin-in"></i></Link>
+                                            <li><Link href=""><i className="lab la-linkedin-in"></i></Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -59,13 +58,13 @@ export default function Navbar() {
                                         <div className="dropdown">
                                             <button className="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">English</button>
                                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <li><Link className="dropdown-item" href="#">English</Link>
+                                                <li><Link className="dropdown-item" href="">English</Link>
                                                 </li>
-                                                <li><Link className="dropdown-item" href="#">Arabic</Link>
+                                                <li><Link className="dropdown-item" href="">Arabic</Link>
                                                 </li>
-                                                <li><Link className="dropdown-item" href="#">French</Link>
+                                                <li><Link className="dropdown-item" href="">French</Link>
                                                 </li>
-                                                <li><Link className="dropdown-item" href="#">Italian</Link>
+                                                <li><Link className="dropdown-item" href="">Italian</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -90,11 +89,40 @@ export default function Navbar() {
                                     <div className="collapse navbar-collapse" id="navbarNav">
                                         <ul className="navbar-nav ms-auto me-auto position-relative">
                                             {/* <!-- Home --> */}
-                                            <li className="nav-item"><Link className="nav-link " href="/home" >Home</Link></li>
+                                            <li className="nav-item"><Link className="nav-link " href="/" >Home</Link></li>
                                             <li className="nav-item"><Link className="nav-link " href="/about" >About Us</Link></li>
-                                            <li className="nav-item"><Link className="nav-link " href="/products" >Medicines</Link></li>
+                                            {/* <li className="nav-item dropdown"><Link className="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown">About Us</Link>
+                                                <ul className="dropdown-menu">
+                                                    <li className="dropdown-submenu"><Link href="/about">About Us</Link></li>
+                                                    <li className="dropdown-submenu"><Link href="/ourteam">Our Team</Link></li>
+                                                    <li className="dropdown-submenu"><Link href="/contact">Contact Us</Link></li>
+                                                    <li className="dropdown-submenu"><Link className="dropdown-item dropdown-toggle" href="">Utilities</Link>
+                                                        <ul className="dropdown-menu">
+                                                            <li><Link href="/faq">Faq</Link></li>
+                                                            <li><Link href="/login">Login</Link></li>
+                                                            <li><Link href="/404error">404 Error</Link></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li> */}
+                                            <li className="nav-item"><Link className="nav-link " href="/medicines" >Medicines</Link></li>
+                                            <li className="nav-item"><Link className="nav-link " href="/globalpresence" >Global Precence</Link></li>
+                                            {/* <li className="nav-item dropdown"><Link className="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown">Services</Link>
+                                                <ul className="dropdown-menu">
+                                                    <li><Link href="/service">Pathologycam Testing</Link>
+                                                    </li>
+                                                    <li><Link href="/service">Biochemistry Solution</Link>
+                                                    </li>
+                                                    <li><Link href="/service">Chemical Research</Link>
+                                                    </li>
+                                                    <li><Link href="/service">Pharmaceutical Research</Link>
+                                                    </li>
+                                                    <li><Link href="/service">Diabetes Testing</Link>
+                                                    </li>
+                                                </ul>
+                                            </li> */}
                                             <li className="nav-item"><Link className="nav-link " href="/news" >News</Link></li>
-                                            <li className="nav-item"><Link className="nav-link " href="/contact" >Contact Us</Link></li>
+                                            <li className="nav-item"><Link className="nav-link " href="/contact" >Contact</Link></li>
                                         </ul>
                                     </div>
                                     <div className="right-nav align-items-center d-flex gap-3 align-items-center justify-content-end">
@@ -106,13 +134,13 @@ export default function Navbar() {
                                         </div>
                                         {/* <div className="ms-sm-3 me-md-5">
                                             <div className="cart">
-                                                <Link href="#" id="header-cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal"> <span className="white-bg px-2 py-1 shadow-sm" data-cart-items="2">
+                                                <Link href="" id="header-cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal"> <span className="white-bg px-2 py-1 shadow-sm" data-cart-items="2">
                                                     <i className="las la-shopping-cart"></i>
                                                 </span>
                                                 </Link>
                                             </div>
                                         </div> */}
-                                        {/* <Link className="btn btn-theme btn-sm d-none d-md-inline-block" href="#"><span>Appointment</span></Link> */}
+                                        {/* <Link className="btn btn-theme btn-sm d-none d-md-inline-block" href=""><span>Appointment</span></Link> */}
                                     </div>
                                 </nav>
                             </div>
